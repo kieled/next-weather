@@ -7,6 +7,18 @@ export const groupForecast = (data: IForecast): IDayForecast[] => {
         groups[date] = value
         return groups
     }, {})
-    result = Object.values(result)
-    return result
+    return Object.values(result)
+}
+
+type ItemType = {[key: string]: IDayForecast[]}
+
+export const groupPerDayForecast = (data: IForecast): ItemType => {
+    return data.list.reduce((dates: ItemType, value) => {
+        const date = value.dt_txt.split(' ')[0]
+        if (!dates[date]) {
+            dates[date] = []
+        }
+        dates[date].push(value)
+        return dates
+    }, {})
 }

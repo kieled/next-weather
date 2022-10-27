@@ -26,7 +26,7 @@ const SearchBox: FC<ComponentProps> = ({onChange, list, onSelectCity}) => {
 
     useEffect(() => {
         onChange(debouncedCity)
-    }, [debouncedCity])
+    }, [debouncedCity, onChange])
 
     return (
         <div className='flex gap-2 items-center'>
@@ -40,6 +40,7 @@ const SearchBox: FC<ComponentProps> = ({onChange, list, onSelectCity}) => {
 
                 {list && <ul className='bg-white border rounded-2xl absolute top-full w-full left-0 translate-y-1'>
                     {list.map(i => <li
+                        key={i.lat}
                         className='p-3 hover:bg-slate-50 first:rounded-t-2xl last:rounded-b-2xl hover:cursor-pointer'
                         onClick={() => onSelect(i)}
                     >

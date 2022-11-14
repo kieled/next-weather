@@ -44,7 +44,7 @@ export const Home = () => {
     }, [city])
 
     useEffect(() => {
-        const cityName = getLocalStorage('city').name || 'Minsk'
+        const cityName = getLocalStorage('city')?.name || 'Minsk'
         findCity(cityName).then(r => r && setCity(r[0]))
     }, [])
 

@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import {GetServerSideProps} from "next";
-import {findCity, getFullForecast} from "../api/api";
+import {findCity, getFullForecast} from "../api";
 import {IDayForecast} from "../models/IForecast";
 import Head from 'next/head'
 import ExtendedDayWeather from "../components/ExtendedDayWeather";
@@ -71,6 +71,7 @@ export const getServerSideProps: GetServerSideProps = async ({params}) => {
             const data = await getFullForecast(city)
             return {props: {data}}
         } catch (e) {
+            console.log(e)
             return {props: {}}
         }
     }

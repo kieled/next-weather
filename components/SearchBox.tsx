@@ -1,7 +1,5 @@
-import React, {ChangeEvent, ChangeEventHandler, FC, useEffect, useState} from 'react';
-import IconComponent from "./IconComponent";
+import React, {ChangeEvent, FC, useEffect, useState} from 'react';
 import useDebounce from "../hooks/useDebounce";
-import {findCity} from "../api/api";
 import {ICity} from "../models/ICity";
 
 interface ComponentProps {

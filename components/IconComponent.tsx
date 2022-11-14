@@ -6,9 +6,13 @@ interface ComponentProps {
 }
 
 const IconComponent: FC<ComponentProps> = ({className, name}) => {
+    const iconName = () => {
+        return name.slice(0, -1) + 'd'
+    }
+
     return (
         <svg className={className}>
-            <use href={`/icons/${name}.svg#${name}`}/>
+            <use href={`/icons/${iconName()}.svg#${iconName()}`}/>
         </svg>
     )
 }

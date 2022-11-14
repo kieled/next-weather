@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {findCity, getCurrentWeather, getForecast} from "../api/api";
+import {findCity, getCurrentWeather, getForecast} from "../api";
 import SearchBox from "../components/SearchBox";
 import CityButton from "../components/CityButton";
 import {useEffect, useState} from "react";

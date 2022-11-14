@@ -79,8 +79,8 @@ export const Home = () => {
                     </div>
                 </div>
                 <Link href={`/${city?.name}`}
-                      className='flex justify-center w-full py-2 px-6 rounded-2xl bg-white hover:scale-105 transition-all'>Прогноз
-                    на 10 дней</Link>
+                      className='flex justify-center w-full py-2 px-6 rounded-2xl bg-white hover:scale-105 transition-all'>
+                    Прогноз на 10 дней</Link>
             </main>
         </div>
     )
